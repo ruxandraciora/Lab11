@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="vehicul1" class="Problema2.Vehicul">
+        <property name="marca" value="marca1"/>
+        <property name="pret" value="30000"/>
+    </bean>
+
+    <bean id="vehicul2" class="Problema2.Vehicul">
+        <constructor-arg value="marca2"/>
+        <constructor-arg value="20000"/>
+    </bean>
+
+    <bean id="vehicul3" class="Problema2.Vehicul">
+        <constructor-arg value="marca3"/>
+        <constructor-arg value="25000"/>
+    </bean>
+
+    <bean id="autoturism1" class="Problema2.Autoturism" parent="vehicul1" autowire="byName">
+        <property name="volum" value="1000"/>
+        <property name="kg" value="2000"/>
+    </bean>
+
+    <bean id="autoturism2" class="Problema2.Autoturism" parent="vehicul2">
+        <constructor-arg value="2000"/>
+        <constructor-arg value="3000"/>
+    </bean>
+
+    <bean id="motocicleta" class="Problema2.Motocicleta" parent="vehicul3">
+        <constructor-arg value="200"/>
+    </bean>
+
+
+</beans>
